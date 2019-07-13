@@ -3,20 +3,6 @@
 class Bowling
 {
 
-	// REFACTOR
-
-	// protected $score = 0;
-
- //    public function roll($roll)
- //    {
- //        $this->score += $roll;
- //    }
-
- //    public function score()
- //    {
- //        return $this->score;
- //    }
-
 	protected $rolls = [];
 
     public function roll($pins)
@@ -26,6 +12,16 @@ class Bowling
 
     public function score()
     {
-        return array_sum($this->rolls);
+        // return array_sum($this->rolls);
+
+    	$score = 0;
+    	$roll = 0;
+
+    	for ($frame=1; $frame <= 10; $frame++) { 
+    		$score += $this->rolls[$roll] + $this->rolls[$roll + 1];
+    		$roll += 2;
+    	}
+
+    	return $score;
     }
 }
