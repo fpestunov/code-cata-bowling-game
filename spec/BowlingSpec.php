@@ -26,16 +26,16 @@ class BowlingSpec extends ObjectBehavior
     	$this->score()->shouldBe(20);
     }
 
-    // function it_awards_a_one_roll_bonus_for_every_spare()
-    // {
-    // 	$this->roll(2);
-    // 	$this->roll(8); // so we got a spare
-    // 	$this->roll(5);
+    function it_awards_a_one_roll_bonus_for_every_spare()
+    {
+    	$this->roll(2);
+    	$this->roll(8); // so we got a spare
+    	$this->roll(5);
 
-    // 	for ($i=0; $i < 17 ; $i++) { 
-    //     	$this->roll(0);
-    // 	}
+    	for ($i=0; $i < 17 ; $i++) { 
+        	$this->roll(0);
+    	}
 
-    // 	$this->score()->shouldBe(20);
-    // }
+    	$this->score()->shouldBe(20);
+    }
 }
