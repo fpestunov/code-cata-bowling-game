@@ -8,8 +8,8 @@ use Prophecy\Argument;
 
 class BowlingSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_scores_a_gutter_game_as_zero()
     {
-        $this->shouldHaveType(Bowling::class);
+        $this->roll(0);
     }
 }

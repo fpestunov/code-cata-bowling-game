@@ -22,3 +22,7 @@
 - `composer install`
 - создаем класс тестирования Боулинг `vendor\bin\phpspec describe Bowling`
 - запускаем тест `vendor\bin\phpspec run` и создаем класс приложения
+
+## Приступаем к разработке
+
+- `it_scores_a_gutter_game_as_zero()` для одной игры;
