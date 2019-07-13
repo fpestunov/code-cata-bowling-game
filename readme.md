@@ -27,3 +27,4 @@
 
 - `it_scores_a_gutter_game_as_zero()` для одной игры;
 - переписываем тест для всей игры - 20 бросков и результат 0;
+- `it_scores_the_sum_of_all_knocked_down_pins_for_a_game()` для одной игры с 1 очком;

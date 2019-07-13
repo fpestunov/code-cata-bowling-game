@@ -2,13 +2,16 @@
 
 class Bowling
 {
+
+	protected $score = 0;
+
     public function roll($roll)
     {
-        // TODO: write logic here
+        $this->score += $roll;
     }
 
     public function score()
     {
-        return 0;
+        return $this->score;
     }
 }
