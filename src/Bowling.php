@@ -19,17 +19,25 @@ class Bowling
 
     	for ($frame=1; $frame <= 10; $frame++) { 
 
-    		if ($this->rolls[$roll] + $this->rolls[$roll + 1] == 10) {
-    			// then we got a spare!
+    		if ($this->isSpare($roll)) {
 	    		$score += 10 + $this->rolls[$roll + 2];
-	    		$roll += 2;
     		} else {
-	    		$score += $this->rolls[$roll] + $this->rolls[$roll + 1];
-	    		$roll += 2;
+	    		$score += $this->getDefaultFrameScore($roll);
     		}
+	    	$roll += 2;
     		
     	}
 
     	return $score;
+    }
+
+    public function isSpare($roll)
+    {
+    	return $this->rolls[$roll] + $this->rolls[$roll + 1] == 10;
+    }
+
+    public function getDefaultFrameScore($roll)
+    {
+    	return $this->rolls[$roll] + $this->rolls[$roll + 1];
     }
 }
