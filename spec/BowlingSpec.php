@@ -10,6 +10,10 @@ class BowlingSpec extends ObjectBehavior
 {
     function it_scores_a_gutter_game_as_zero()
     {
-        $this->roll(0);
+    	for ($i=0; $i < 20 ; $i++) { 
+        	$this->roll(0);
+    	}
+
+    	$this->score()->shouldBe(0);
     }
 }
