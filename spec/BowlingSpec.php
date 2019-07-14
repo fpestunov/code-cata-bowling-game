@@ -32,6 +32,17 @@ class BowlingSpec extends ObjectBehavior
     	$this->score()->shouldBe(20);
     }
 
+    function it_awards_a_two_roll_bonus_for_a_strike_in_the_previous_game()
+    {
+    	$this->roll(10); // strike
+    	$this->roll(7);
+    	$this->roll(2);
+
+    	$this->rollTimes(17, 0);
+
+    	$this->score()->shouldBe(28);
+    }
+
     private function rollSpare()
     {
     	$this->roll(2);
