@@ -7,6 +7,10 @@ class Bowling
 
     public function roll($pins)
     {
+    	if ($pins < 0) {
+    		throw new InvalidArgumentException;
+    		
+    	}
         $this->rolls[] = $pins;
     }
 
