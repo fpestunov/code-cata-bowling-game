@@ -7,10 +7,8 @@ class Bowling
 
     public function roll($pins)
     {
-    	if ($pins < 0) {
-    		throw new InvalidArgumentException;
-    		
-    	}
+    	$this->guardAgainstInvalidRolls($pins);
+
         $this->rolls[] = $pins;
     }
 
@@ -61,5 +59,12 @@ class Bowling
     private function getDefaultFrameScore($roll)
     {
     	return $this->rolls[$roll] + $this->rolls[$roll + 1];
+    }
+
+    private function guardAgainstInvalidRolls($pins)
+    {
+    	if ($pins < 0) {
+    		throw new InvalidArgumentException;
+    	}
     }
 }
