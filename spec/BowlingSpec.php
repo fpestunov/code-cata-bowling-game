@@ -43,6 +43,13 @@ class BowlingSpec extends ObjectBehavior
     	$this->score()->shouldBe(28);
     }
 
+    function it_scores_a_perfect_game()
+    {
+    	$this->rollTimes(12, 10);
+
+    	$this->score()->shouldBe(300);
+    }
+
     private function rollSpare()
     {
     	$this->roll(2);
